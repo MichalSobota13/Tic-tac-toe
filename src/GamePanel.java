@@ -32,9 +32,6 @@ public class GamePanel extends Panel implements MouseMotionListener, MouseInputL
     }
 
 
-
-
-
     @Override
     public void mouseClicked(MouseEvent e) {
     }

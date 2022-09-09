@@ -89,5 +89,4 @@ public class Placement implements IGameObject {
             fadeIn = false;
         }
     }
-
 }

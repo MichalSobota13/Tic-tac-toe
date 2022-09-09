@@ -9,20 +9,16 @@ public class Checker {
             int x = i % Main.ROWS;
             int y = i / Main.ROWS;
 
-            // diagonal bottom left, top right
             match = checkMatch(x, y, 1, -1, i, markers);
 
-            // diagonal top left, bottom right
             if(match == null) {
                 match = checkMatch(x, y, 1, 1, i, markers);
             }
 
-            // horizontal
             if(match == null) {
                 match = checkMatch(x, y, 1, 0, i, markers);
             }
 
-            // vertical
             if(match == null) {
                 match = checkMatch(x, y, 0, 1, i, markers);
             }

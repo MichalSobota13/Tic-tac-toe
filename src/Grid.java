@@ -90,10 +90,8 @@ public class Grid implements IGameObject {
         graphicsRender.setColor(Color.white);
 
         if (winType == -1) {
-            // tie!
             graphicsRender.drawString("It's a tie!", 195, 235);
         } else {
-            // won!
             graphicsRender.drawString((winType == 0 ? "X" : "O") + " has won!", 175, 235);
         }
 
