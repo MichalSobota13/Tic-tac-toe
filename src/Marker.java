@@ -25,7 +25,7 @@ public class Marker implements IGameObject {
         String markerType = this.type == 0 ? "x" : "o";
 
         try {
-            marker = ImageIO.read(new File("assets/" + markerType + ".png"));
+            marker = ImageIO.read(new File("src/Assets/" + markerType + ".png"));
         } catch (Exception e) {
             e.printStackTrace();
         }
