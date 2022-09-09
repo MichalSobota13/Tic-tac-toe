@@ -14,7 +14,7 @@ public class Panel extends JPanel implements Runnable{
     // Will be our graphics renderer to render our scene
     protected Graphics2D graphicsRender;
 
-    // used as reference to generate graphics renderer, we will basically render 
+    // used as reference to generate graphics renderer, we will basically render
     // everything to this image
     private Image img;
 
@@ -64,7 +64,7 @@ public class Panel extends JPanel implements Runnable{
                 // tick + delta time
                 update(deltaTime);
 
-                // render 
+                // render
                 render();
 
                 // reset delta

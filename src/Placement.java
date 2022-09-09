@@ -1,4 +1,5 @@
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics2D;
 
 public class Placement implements IGameObject {
 
@@ -13,11 +14,12 @@ public class Placement implements IGameObject {
     private int x;
     private int y;
     private int xIndex;
+
     private int yIndex;
     private int width;
     private int height;
 
-    public Placement(int x, int y, int xIndex, int yIndex, int width, int height){
+    public Placement(int x, int y, int xIndex, int yIndex, int width, int height) {
         this.x = x;
         this.y = y;
         this.xIndex = xIndex;
@@ -28,17 +30,18 @@ public class Placement implements IGameObject {
 
     @Override
     public void update(float deltaTime) {
-        if(fadeIn && alpha != 1){
+        if(fadeIn && alpha != 1) {
             alpha += fadeSpeed;
-            if (alpha > 1) {
+            if(alpha > 1) {
                 alpha = 1;
             }
-        } else if (!fadeIn && alpha != 0) {
+        } else if(!fadeIn && alpha != 0) {
             alpha -= fadeSpeed;
-            if (alpha > 1) {
-                alpha = 1;
+            if(alpha < 0) {
+                alpha = 0;
+            }
         }
-        }
+
     }
 
     @Override
@@ -54,12 +57,18 @@ public class Placement implements IGameObject {
     }
 
     public void checkCollision(int x, int y) {
-        if (x > this.x && x < this.x + width && y > this.y && y < this.y + height){
+        if(markerPlaced) {
+            return;
+        }
+
+        if(x > this.x && x < this.x + width &&
+                y > this.y && y < this.y + height) {
             fadeIn = true;
         } else {
             fadeIn = false;
         }
     }
+
 
     public int getxIndex() {
         return xIndex;
@@ -68,4 +77,17 @@ public class Placement implements IGameObject {
     public int getyIndex() {
         return yIndex;
     }
+
+    public boolean isActive() {
+        return fadeIn;
+    }
+
+    public void set(boolean isSet) {
+        markerPlaced = isSet;
+
+        if(isSet) {
+            fadeIn = false;
+        }
+    }
+
 }

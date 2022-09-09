@@ -1,12 +1,13 @@
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
+
+import javax.swing.JFrame;
 
 public class Main {
 
     public static int WIDTH = 500;
     public static int HEIGHT = 500;
 
-    public static int ROWS = 10;
+    public static int ROWS = 3;
     public static int MATCH = 3;
     public static int SIZE = ROWS * ROWS;
 
@@ -22,4 +23,5 @@ public class Main {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }
+
 }
